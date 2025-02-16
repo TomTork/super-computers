@@ -1,5 +1,5 @@
 {
-  "name": "${PROJECT_NAME}",
+  "name": "untitled1",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,8 +9,10 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "typescript": "^5.2.2",
     "prettier": "^3.3.1",
-    "vite": "^5.2.0"
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-multi-pages": "^0.0.14"
   }
 }
