@@ -127,3 +127,11 @@ th, td {
     text-align: left;
 }
 th {}
+
+.col1 {
+    background-color: #878484;
+    font-weight: bold;
+}
+.col2 {
+    background-color: #5e7d8e;
+}
