@@ -6,15 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Сайт о Суперкомпьютерах</title>
   <link rel="stylesheet" href="/src/style.css">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid rgb(221, 221, 221);
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+    tr:hover {
+      background-color: #ddd;
+    }
+    td {
+      color: black;
+    }
+    th {
+      color: black;
+    }
+    p {
+      color: #cfcfcf;
+    }
+  </style>
 </head>
-<body>
+<body id="body">
 <header>
   <div class="flex-row w-100" style="background-color: #2e2e2e; align-items: center;">
     <a href="/">
       <img class="logo" src="/main/computer-logo.svg" alt="supercomputer-logo" />
     </a>
     <h1>Сайт о Суперкомпьютерах</h1>
-    <button style="margin-left: auto">
+    <button style="margin-left: auto" id="openModalSearch">
       <img class="logo" src="/main/search.svg" alt="search" />
     </button>
   </div>
@@ -22,6 +51,7 @@
 <main id="app">
   <div class="flex-col w-100 h-100 align-center">
     <h2>Что такое суперкомпьютер?</h2>
+    <!-- Пример связанных, глобальных, локальных стилей-->
     <p class="text" style="width: 800px">
       <span style="font-style: italic">Суперкомпьютер</span> - это тип компьютера с высоким уровнем производительности по сравнению с компьютером общего назначения.
       Производительность суперкомпьютера обычно измеряется в операциях с плавающей точкой в секунду <q>(FLOPS)</q>
@@ -86,7 +116,14 @@
     </tr>
     <tr>
       <td>5</td>
-      <td>Cray Titan</td>
+      <td>
+        <div class="flex-row items-center" style="gap: 10px">
+          <a href="https://habr.com/ru/articles/158389/">
+            <img style="filter: grayscale(100%)" class="logo" src="/public/photos/cray.jpg" alt="cray" />
+          </a>
+          <p>Cray Titan</p>
+        </div>
+      </td>
       <td>17.6</td>
       <td>18,688</td>
       <td>8</td>
@@ -182,6 +219,17 @@
   <article>
     <a href="pages/source.html">Использованные источники</a>
   </article>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModalBtn" class="close">&times;</span>
+      <h2>Поиск</h2>
+      <label for="inp-search">
+        <input id="inp-search" type="text" placeholder="Введите что-нибудь для поиска..."
+               style="background-color: transparent; color: white; border-color: white; margin-top: 1%; border-radius: 5px; width: 60%" />
+      </label>
+    </div>
+  </div>
 </main>
 <footer class="footer">
   <h4><var>Разработка продолжается. Если вы встретили баг, пожалуйста, напишите <a href="https://t.me/tomtork">автору</a>.</var></h4>
