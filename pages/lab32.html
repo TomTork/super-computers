@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вложенные прямоугольники</title>
+  <link rel="stylesheet" href="/src/style.css">
+  <style>
+    body { text-align: center; color: white; }
+    canvas { background: #111; border: 1px solid #555; }
+  </style>
+</head>
+<body>
+<div class="flex-col" style="gap: 20px">
+  <div class="flex-row" style="gap: 20px; align-self: center">
+    <label for="count">Число вложений: <input type="number" id="count" min="1"></label>
+    <label for="width">Ширина: <input type="number" id="width"></label>
+    <label for="height">Высота: <input type="number" id="height"></label>
+    <button style="color: white; background-color: #888888" onclick="drawRectangles()">Рисовать</button>
+  </div>
+  <canvas style="width: 500px; height: 500px; align-self: center" id="canvas" width="500" height="400"></canvas>
+</div>
+<script>
+  function drawRectangles() {
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const count = Number(document.getElementById('count').value);
+    let width = Number(document.getElementById('width').value);
+    let height = Number(document.getElementById('height').value);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // очистка возможного предыдущего рисования
+    ctx.strokeStyle = "#4A6FA5";
+    ctx.lineWidth = 2;
+
+    // центрируем прямоугольник
+    let x = (canvas.width - width) / 2;
+    let y = (canvas.height - height) / 2;
+    // шаг уменьшения прямоугольника
+    let stepX = width / 10;
+    let stepY = height / 10;
+
+    for (let i = 0; i < count; i++) {
+      ctx.strokeRect(x, y, width, height);
+      x += stepX / 2;
+      y += stepY / 2;
+      width -= stepX;
+      height -= stepY;
+    }
+  }
+</script>
+</body>
+</html>

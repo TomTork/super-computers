@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 3 — ex. 3</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+<div class="flex-col">
+  <h1>Вариант 3, задание 1</h1>
+  <div class="flex-row" style="gap: 50px">
+    <div class="flex-col" style="gap: 10px">
+      <div class="flex-row" style="gap: 20px">
+        <p class="mt-auto mb-auto t-start" style="width: 160px">Длина таблицы:</p>
+        <label for="table-row">
+          <input type="number" id="table-row" min="1" />
+        </label>
+      </div>
+      <div class="flex-row" style="gap: 20px">
+        <p class="mt-auto mb-auto t-start" style="width: 160px">Высота таблицы:</p>
+        <label for="table-col">
+          <input type="number" id="table-col" min="1" />
+        </label>
+      </div>
+      <div class="flex-row" style="gap: 20px">
+        <p class="mt-auto mb-auto t-start" style="width: 160px">Значение в таблице:</p>
+        <label for="table-value">
+          <input type="number" id="table-value" min="1" />
+        </label>
+      </div>
+      <button style="color: white; background-color: #888888" id="calculate">Рассчитать</button>
+    </div>
+    <div id="table"></div>
+  </div>
+</div>
+
+
+<script type="module" src="/src/lab31.ts"></script>
+</body>
+</html>
